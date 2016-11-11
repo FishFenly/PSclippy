@@ -53,7 +53,8 @@
     $null = $AsyncWindow::ShowWindowAsync((Get-Process -PID $PID).MainWindowHandle, 0)
     $Text = "Stop Coughing DJ...","Noones heard about that anime DJ...","Shut up DJ..."
     function randomPhrase{
-        $i = Get-Random -Maximum 3
+    	$x = $Text.Count
+        $i = Get-Random -Maximum $x
         $ClippyText.Text = $Text[$i]
     }
     $Window = [Windows.Markup.XamlReader]::Load((New-Object System.Xml.XmlNodeReader $XAML))
