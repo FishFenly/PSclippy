@@ -51,7 +51,7 @@
     $WindowCode = '[DllImport("user32.dll")] public static extern bool ShowWindowAsync(IntPtr hWnd, int nCmdShow);'
     $AsyncWindow = Add-Type -MemberDefinition $WindowCode -Name Win32ShowWindowAsync -namespace Win32Functions -PassThru
     $null = $AsyncWindow::ShowWindowAsync((Get-Process -PID $PID).MainWindowHandle, 0)
-    $Text = "Stop Coughing DJ...","Noones heard about that anime DJ...","Shut up DJ..."
+    $Text = "Stop Coughing...","Noones heard about that anime..."
     function randomPhrase{
     	$x = $Text.Count
         $i = Get-Random -Maximum $x
